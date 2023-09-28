@@ -1,0 +1,122 @@
+/* https://smart-interface-design-patterns.com/#table-of-contents */
+
+:root {
+  --spacer: 1rem;
+  --border-radius: 0.25em;
+
+  --event-color-neutral-100: #fff;
+  --event-color-neutral-200: #cdcdcd;
+  --event-color-neutral-300: #b7b7b7;
+  --event-color-neutral-900: #050505;
+
+  --event-color-primary-300: #b64120;
+  --event-color-primary-500: #8b2d14;
+
+  --event-color-secondary-300: #22607c;
+  --event-color-secondary-500: #0d242f;
+
+  --event-color-accent-400: #fb6955;
+  --event-color-accent-500: #ff4545;
+}
+
+/* Utility Classes  */
+.flow-content > * + * {
+  margin-top: var(--flow-space, var(--spacer));
+}
+.flow-content--xs {
+  --flow-space: 0.75rem;
+}
+.flow-content--md {
+  --flow-space: 1.5rem;
+}
+.flow-content--lg {
+  --flow-space: 3rem;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-spacer, var(--spacer));
+}
+
+@media (min-width: 40em) {
+  .flex-wrapper {
+    flex-direction: row;
+  }
+}
+
+.jc-center {
+  justify-content: center;
+}
+.ai-center {
+  align-items: center;
+}
+
+section > [class^='container'] {
+  padding: var(--y-spacer, calc(var(--spacer) * 2)) var(--spacer);
+}
+
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--btn-bg, var(--event-color-secondary-500));
+  color: var(--btn-fg, var(--event-color-neutral-100));
+  padding: 0.65em 1.5em;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--clr-neutral-900);
+  margin: 0;
+}
+
+.event-bg {
+  --y-spacer: 3em;
+  background: var(--bg, var(--event-color-neutral-200));
+  color: var(--fg, var(--event-color-neutral-900));
+}
+
+.event-bg--dark {
+  --bg: var(--event-color-secondary-500);
+  --fg: var(--event-color-neutral-100);
+  --btn-bg: var(--event-color-accent-500);
+}
+
+.event-bg--accent {
+  --bg: var(--event-color-accent-500);
+  --fg: var(--event-color-neutral-100);
+  --btn-bg: var(--event-color-secondary-300);
+}
+/* Welcome Section */
+.welcome {
+  --gap-spacer: calc(var(--spacer) * 2);
+}
+.welcome__content {
+  flex-basis: 50%;
+}
+.welcome__image {
+  flex-basis: 50%;
+}
+
+.welcome__heading {
+  font-size: 3rem;
+}
+.welcome__copy {
+  line-height: 1.7;
+}
+.welcome__image img {
+  object-fit: cover;
+}
